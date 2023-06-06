@@ -1,4 +1,7 @@
-name: 🧱 Setup
+name: 🧱 Setup pnpm, install and cache packages
+description: Setup pnpm, install and cache packages
+icon: package
+color: yellow
 
 runs:
   using: 'composite'
