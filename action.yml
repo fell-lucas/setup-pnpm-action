@@ -4,12 +4,19 @@ icon: package
 color: yellow
 
 runs:
-  using: 'composite'
-  steps: 
+  using: "composite"
+  steps:
+    - name: "Cleanup build folder"
+      shell: bash
+      run: |
+        ls -la ./
+        rm -rf ./* || true
+        rm -rf ./.??* || true
+        ls -la ./
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version-file: '.nvmrc'
+        node-version-file: ".nvmrc"
 
     - uses: pnpm/action-setup@v3
       with:
@@ -33,4 +40,3 @@ runs:
 
     # - run: pnpm install --frozen-lockfile
     #   shell: bash
-      
